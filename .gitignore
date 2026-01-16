@@ -1,3 +1,7 @@
+# API Testing Framework - Git Ignore
+# Author: Rudra
+# License: MIT
+
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -5,13 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Test Results
-results/
 coverage/
-*.html
-*.json
-!*.postman_collection.json
-!*.postman_environment.json
-!package.json
 
 # IDE
 .vscode/

@@ -1053,7 +1053,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"postman.setNextRequest(\"Get Post 1 Comments (Comments Endpoint)\")"
+											"pm.execution.setNextRequest(\"Get Post 1 Comments (Comments Endpoint)\");"
 										],
 										"type": "text/javascript"
 									}

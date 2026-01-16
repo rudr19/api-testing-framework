@@ -1,4 +1,9 @@
 ---
+# API Testing Framework CI/CD Pipeline
+# Author: Rudra
+# License: MIT
+# Description: Automated testing pipeline for REST API validation
+
 name: API Testing Framework CI/CD
 
 on:
