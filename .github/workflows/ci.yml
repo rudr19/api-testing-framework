@@ -32,7 +32,8 @@ jobs:
         run: npm ci
 
       - name: Validate Postman collections
-        run: node scripts/validate-collections.js || true
+        run: if [ -f scripts/validate-collections.js ]; then node scripts/validate-collections.js; else echo "Validation script not found"; fi
+        continue-on-error: true
 
   functional-tests:
     name: Functional Tests

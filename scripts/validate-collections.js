@@ -57,7 +57,7 @@ function validateCollection(filePath) {
     }
 
     // Check for author info
-    if (!data.info.author || data.info.author === 'mathare') {
+    if (data.info && (!data.info.author || data.info.author === 'mathare')) {
       console.warn(`[WARN] Collection ${filePath}: Author not updated to Rudra`);
       warnings++;
     }
@@ -129,4 +129,13 @@ console.log(`   Passed: ${successes}`);
 console.log(`   Warnings: ${warnings}`);
 console.log(`   Errors: ${errors}`);
 
-process.exit(errors > 0 ? 1 : 0);
+if (errors > 0) {
+  console.error('\nValidation FAILED - Fix errors and try again');
+  process.exit(1);
+} else if (warnings > 0) {
+  console.warn('\nValidation PASSED with warnings');
+  process.exit(0);
+} else {
+  console.log('\nValidation PASSED');
+  process.exit(0);
+}
